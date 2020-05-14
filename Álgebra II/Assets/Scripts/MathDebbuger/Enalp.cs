@@ -3,58 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace CustomMath
 {
-    public struct PlaneA2
+    public struct Enalp
     {
         #region Variables
-        Vec3 _a;
-        Vec3 _b;
-        Vec3 _c;
+        Vec3 a { get; set; }
+        Vec3 b { get; set; }
+        Vec3 c { get; set; }
+        public Vec3 normal { get; set; }
+        public float distance { get; set; }
+        public Vec3 flipped { get; }
         #endregion
 
-        //
-        // Resumen:
-        //     Creates a plane.
-        //
-        // Parámetros:
-        //   inNormal:
-        //
-        //   inPoint:
-        public PlaneA2(Vec3 inNormal, Vec3 inPoint)
+        #region Constructors
+        public Enalp(Vec3 inNormal, Vec3 inPoint)
         {
-            _a = Vec3.Zero;
-            _b = inNormal;
-            _c = inPoint;
+            Vec3 normalPerp1 = new Vec3(inNormal.y, -inNormal.x, 0);
+            Vec3 normalPerp2 = new Vec3(inNormal.z, 0, -inNormal.x);
+            this.a = inPoint;
+            this.b = a + normalPerp1;
+            this.c = a + normalPerp2;
+
+            normal = inNormal;
+            distance = Vec3.Dot(-a, normal) / Vec3.Magnitude(normal);
+            flipped = -normal;
         }
-        //
-        // Resumen:
-        //     Creates a plane.
-        //
-        // Parámetros:
-        //   a:
-        //
-        //   b:
-        //
-        //   c:
-        public PlaneA2(Vec3 a, Vec3 b, Vec3 c)
+        
+        public Enalp(Vec3 a, Vec3 b, Vec3 c)
         {
-            _a = a;
-            _b = b;
-            _c = c;
+            this.a = a;
+            this.b = b;
+            this.c = c;
+
+            Vec3 side1 = b - a;
+            Vec3 side2 = c - a;
+            normal = Vec3.Cross(side1, side2);
+            distance = Vec3.Dot(-a, normal) / Vec3.Magnitude(normal);
+            flipped = -normal;
         }
+        #endregion
 
-        //
-        // Resumen:
-        //     Normal vector of the plane.
-        public Vec3 normal { get; set; }
-        //
-        // Resumen:
-        //     Distance from the origin to the plane.
-        public float distance { get; set; }
-        //
-        // Resumen:
-        //     Returns a copy of the plane that faces in the opposite direction.
-        public PlaneA2 flipped { get; }
-
+        #region Functions
         //
         // Resumen:
         //     Returns a copy of the given plane that is moved in space by the given translation.
@@ -68,9 +56,9 @@ namespace CustomMath
         //
         // Devuelve:
         //     The translated plane.
-        public static PlaneA2 Translate(PlaneA2 plane, Vec3 translation)
+        public static Enalp Translate(Enalp plane, Vec3 translation)
         {
-
+            return new Enalp(plane.a + translation, plane.b + translation, plane.c + translation);
         }
         //
         // Resumen:
@@ -84,14 +72,16 @@ namespace CustomMath
         //     A point on the plane that is closest to point.
         public Vec3 ClosestPointOnPlane(Vec3 point)
         {
-
+            float distance = Vec3.Dot(point - a, normal) / Vec3.Magnitude(normal);
+            Vec3 vector = normal.normalized * distance;
+            return point + vector;
         }
         //
         // Resumen:
         //     Makes the plane face in the opposite direction.
         public void Flip()
         {
-
+            this = new Enalp(-normal, a);
         }
         //
         // Resumen:
@@ -101,7 +91,7 @@ namespace CustomMath
         //   point:
         public float GetDistanceToPoint(Vec3 point)
         {
-
+            return distance = Vec3.Dot(point - a, normal) / Vec3.Magnitude(normal);
         }
         //
         // Resumen:
@@ -111,11 +101,13 @@ namespace CustomMath
         //   point:
         public bool GetSide(Vec3 point)
         {
-
+            return GetDistanceToPoint(point) >= 0;
         }
         public bool SameSide(Vec3 inPt0, Vec3 inPt1)
         {
-
+            bool onPositiveSide = (GetDistanceToPoint(inPt0) >= 0) && (GetDistanceToPoint(inPt1) >= 0);
+            bool onNegativeSide = (GetDistanceToPoint(inPt0) < 0) && (GetDistanceToPoint(inPt1) >= 0);
+            return onPositiveSide || onNegativeSide;
         }
         //
         // Resumen:
@@ -133,7 +125,7 @@ namespace CustomMath
         //     Third point in clockwise order.
         public void Set3Points(Vec3 a, Vec3 b, Vec3 c)
         {
-
+            this = new Enalp(a, b, c);
         }
         //
         // Resumen:
@@ -148,15 +140,15 @@ namespace CustomMath
         //     A point that lies on the plane.
         public void SetNormalAndPosition(Vec3 inNormal, Vec3 inPoint)
         {
-
+            this = new Enalp(inNormal, inPoint);
         }
         public override string ToString()
         {
-
+            return "Normal: " + normal.ToString() + ", Distance: " + distance;
         }
         public string ToString(string format)
         {
-
+            return "Normal: " + normal.ToString() + ", Distance: " + distance.ToString(format);
         }
         //
         // Resumen:
@@ -167,7 +159,10 @@ namespace CustomMath
         //     The offset in space to move the plane with.
         public void Translate(Vec3 translation)
         {
-
+            a += translation;
+            b += translation;
+            c += translation;
         }
+        #endregion
     }
 }

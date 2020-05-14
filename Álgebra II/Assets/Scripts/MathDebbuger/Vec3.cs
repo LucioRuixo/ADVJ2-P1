@@ -9,9 +9,9 @@ namespace CustomMath
         public float y;
         public float z;
 
-        public float sqrMagnitude { get { throw new NotImplementedException(); } }
-        public Vector3 normalized { get { throw new NotImplementedException(); } }
-        public float magnitude { get { throw new NotImplementedException(); } }
+        public float sqrMagnitude { get { Vec3 vector = new Vec3(x, y, z); return Dot(vector, vector); } }
+        public Vec3 normalized { get { return this / Magnitude(this); } }
+        public float magnitude { get { Vec3 vector = new Vec3(x, y, z); return Mathf.Sqrt(Dot(vector, vector)); } }
         #endregion
 
         #region Default Values
@@ -236,7 +236,10 @@ namespace CustomMath
         }
         public static Vec3 Project(Vec3 vector, Vec3 onNormal) 
         {
-            return (Dot(vector, onNormal) / Dot(vector, vector)) * vector;
+            if (onNormal == Vec3.Zero)
+                return Vec3.Zero;
+
+            return (Dot(onNormal, vector) / Dot(onNormal, onNormal)) * onNormal;
         }
         public static Vec3 Reflect(Vec3 inDirection, Vec3 inNormal) 
         {

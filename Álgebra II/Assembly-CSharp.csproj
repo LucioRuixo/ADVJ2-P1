@@ -64,37 +64,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MathDebbuger\Debuggers\VectorDebugger.cs" />
+    <Compile Include="Assets\Scripts\MathDebbuger\Enalp.cs" />
     <Compile Include="Assets\Scripts\MathDebbuger\Internals\CameraDebugger.cs" />
-    <Compile Include="Assets\Scripts\MathDebbuger\Plane.cs" />
-    <Compile Include="Assets\Scripts\MathDebbuger\Tests\Tester.cs" />
+    <Compile Include="Assets\Scripts\MathDebbuger\Tests\Ejercicio_Plane.cs" />
+    <Compile Include="Assets\Scripts\MathDebbuger\Tests\Ejercicio_Vec3.cs" />
     <Compile Include="Assets\Scripts\MathDebbuger\Vec3.cs" />
     <Compile Include="Assets\Scripts\Nave.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Lucio/Documents/Universidad/3er semestre/Álgebra II/Álgebra II/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Lucio/Repositorios/Algebra-II/Álgebra II/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Lucio/Documents/Universidad/3er semestre/Álgebra II/Álgebra II/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Lucio/Repositorios/Algebra-II/Álgebra II/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Lucio/Documents/Universidad/3er semestre/Álgebra II/Álgebra II/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Lucio/Repositorios/Algebra-II/Álgebra II/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Lucio/Documents/Universidad/3er semestre/Álgebra II/Álgebra II/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Lucio/Repositorios/Algebra-II/Álgebra II/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Lucio/Documents/Universidad/3er semestre/Álgebra II/Álgebra II/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Lucio/Repositorios/Algebra-II/Álgebra II/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Lucio/Documents/Universidad/3er semestre/Álgebra II/Álgebra II/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Lucio/Repositorios/Algebra-II/Álgebra II/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Lucio/Documents/Universidad/3er semestre/Álgebra II/Álgebra II/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Lucio/Repositorios/Algebra-II/Álgebra II/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Lucio/Documents/Universidad/3er semestre/Álgebra II/Álgebra II/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Lucio/Repositorios/Algebra-II/Álgebra II/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Lucio/Documents/Universidad/3er semestre/Álgebra II/Álgebra II/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Lucio/Repositorios/Algebra-II/Álgebra II/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
