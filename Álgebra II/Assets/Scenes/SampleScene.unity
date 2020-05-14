@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 57195208}
   - component: {fileID: 57195207}
   m_Layer: 0
-  m_Name: Plane (2)
+  m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 176479115}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!64 &57195207
 MeshCollider:
@@ -327,6 +327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 176479115}
+  - component: {fileID: 176479116}
   m_Layer: 0
   m_Name: Ejercicio Plane
   m_TagString: Untagged
@@ -345,16 +346,35 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1932871218}
+  - {fileID: 700670089}
+  - {fileID: 460776532}
   - {fileID: 508461130}
+  - {fileID: 1932871218}
   - {fileID: 57195206}
   - {fileID: 1104923805}
-  - {fileID: 460776532}
-  - {fileID: 700670089}
   - {fileID: 1465466358}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &176479116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176479114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8121966c2d0092846ad34910bcf7e01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformIzquierda: {fileID: 700670089}
+  transformDerecha: {fileID: 460776532}
+  transformArriba: {fileID: 508461130}
+  transformAbajo: {fileID: 1932871218}
+  transformAdelante: {fileID: 57195206}
+  transformAtras: {fileID: 1104923805}
+  esfera: {fileID: 1465466358}
 --- !u!1 &460776531
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +388,7 @@ GameObject:
   - component: {fileID: 460776534}
   - component: {fileID: 460776533}
   m_Layer: 0
-  m_Name: Plane (4)
+  m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +406,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 176479115}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!64 &460776533
 MeshCollider:
@@ -461,7 +481,7 @@ GameObject:
   - component: {fileID: 508461132}
   - component: {fileID: 508461131}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -479,7 +499,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 176479115}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
 --- !u!64 &508461131
 MeshCollider:
@@ -554,7 +574,7 @@ GameObject:
   - component: {fileID: 700670091}
   - component: {fileID: 700670090}
   m_Layer: 0
-  m_Name: Plane (5)
+  m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,7 +592,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 176479115}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!64 &700670090
 MeshCollider:
@@ -821,7 +841,7 @@ GameObject:
   - component: {fileID: 1104923807}
   - component: {fileID: 1104923806}
   m_Layer: 0
-  m_Name: Plane (3)
+  m_Name: Plane (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,7 +859,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 176479115}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!64 &1104923806
 MeshCollider:
@@ -1054,7 +1074,7 @@ GameObject:
   - component: {fileID: 1932871220}
   - component: {fileID: 1932871219}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1072,7 +1092,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 176479115}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1932871219
 MeshCollider:

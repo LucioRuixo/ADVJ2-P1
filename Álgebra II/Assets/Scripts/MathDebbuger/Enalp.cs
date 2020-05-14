@@ -101,12 +101,12 @@ namespace CustomMath
         //   point:
         public bool GetSide(Vec3 point)
         {
-            return GetDistanceToPoint(point) >= 0;
+            return GetDistanceToPoint(point) > 0;
         }
         public bool SameSide(Vec3 inPt0, Vec3 inPt1)
         {
-            bool onPositiveSide = (GetDistanceToPoint(inPt0) >= 0) && (GetDistanceToPoint(inPt1) >= 0);
-            bool onNegativeSide = (GetDistanceToPoint(inPt0) < 0) && (GetDistanceToPoint(inPt1) >= 0);
+            bool onPositiveSide = (GetDistanceToPoint(inPt0) > 0) && (GetDistanceToPoint(inPt1) >= 0);
+            bool onNegativeSide = (GetDistanceToPoint(inPt0) <= 0) && (GetDistanceToPoint(inPt1) >= 0);
             return onPositiveSide || onNegativeSide;
         }
         //
