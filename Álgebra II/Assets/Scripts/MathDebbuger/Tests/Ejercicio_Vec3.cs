@@ -143,6 +143,8 @@ public class Ejercicio_Vec3 : MonoBehaviour
                 }
             case Ejercicios.Nueve:
                 {
+                    Vec3 BPerpendicular = new Vec3(BV3.y, -BV3.x, 0);
+                    CV3 = Vec3.Reflect(-AV3, BPerpendicular);
 
                     break;
                 }

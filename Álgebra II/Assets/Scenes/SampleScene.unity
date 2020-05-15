@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &176479115
 Transform:
   m_ObjectHideFlags: 0
@@ -375,6 +375,8 @@ MonoBehaviour:
   transformAdelante: {fileID: 57195206}
   transformAtras: {fileID: 1104923805}
   esfera: {fileID: 1465466358}
+  posicion: {x: 0, y: 0, z: 0}
+  adentro: 0
 --- !u!1 &460776531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1826441265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,7 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5899b3b1fa657b44810154516827330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ejercicio: 7
+  ejercicio: 8
   vectorColor: {r: 1, g: 0, b: 0, a: 1}
   A: {x: 4, y: 3, z: 0}
   B: {x: 0, y: 0, z: 0}
